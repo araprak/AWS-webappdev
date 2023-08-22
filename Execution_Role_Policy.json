@@ -12,7 +12,7 @@
             "dynamodb:Query",
             "dynamodb:UpdateItem"
         ],
-        "Resource": "YOUR-TABLE-ARN"
+        "Resource": "arn:aws:dynamodb:ap-south-1:821217320024:table/PowerofMathDatabase"
     }
     ]
 }
