@@ -7,13 +7,14 @@
 </head>
 <body>
     <h1>TO THE POWER OF MATH!</h1>
-	<form>
+    <form>
         <label>Base number:</label>
-        <input type="text" id="base">
+        <input type="text" id="base" oninput="validateInput(this)">
         <label>...to the power of:</label>
-        <input type="text" id="exponent">
-        <button type="button" onclick="callAPI()">CALCULATE</button>
+        <input type="text" id="exponent" oninput="validateInput(this)">
+        <button type="button" onclick="calculatePower()">CALCULATE</button>
     </form>
+    <div id="result"></div>
     <script src="script.js"></script>
 </body>
 </html>
