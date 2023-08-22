@@ -14,6 +14,11 @@ var calculatePower = () => {
 
     var result = Math.pow(base, exponent);
     document.getElementById('result').innerHTML = `Result: ${base} ^ ${exponent} = ${result}`;
+
+    fetch("YOUR API GATEWAY ENDPOINT", requestOptions)
+    .then(response => response.text())
+    .then(result => alert(JSON.parse(result).body))
+    .catch(error => console.log('error', error));
 }
 
 // Function to check if a value is a number
