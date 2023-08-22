@@ -1,3 +1,31 @@
+// callAPI function that takes the base and exponent numbers as parameters
+
+var callAPI = () => {
+    var base = parseFloat(document.getElementById('base').value);
+    var exponent = parseFloat(document.getElementById('exponent').value);
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({"base": base, "exponent": exponent});
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+
+    fetch("https://zsk9bo6vv7.execute-api.ap-south-1.amazonaws.com/Powerofdev", requestOptions)
+        .then(response => response.text())
+        .then(result => {
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `API Result: ${base} ^ ${exponent} = ${JSON.parse(result).body}`;
+        })
+        .catch(error => console.log('error', error));
+};
+
+
 // Function to validate input and allow only numeric values
 function validateInput(inputElement) {
     inputElement.value = inputElement.value.replace(/[^0-9.-]/g, "");
@@ -21,30 +49,4 @@ var calculatePower = () => {
 
     // Call the API function
     callAPI();
-};
-
-// callAPI function that takes the base and exponent numbers as parameters
-var callAPI = () => {
-    var base = parseFloat(document.getElementById('base').value);
-    var exponent = parseFloat(document.getElementById('exponent').value);
-
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    var raw = JSON.stringify({"base": base, "exponent": exponent});
-
-    var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-    };
-
-    fetch("Has to be updated", requestOptions)
-        .then(response => response.text())
-        .then(result => {
-            var resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = `API Result: ${base} ^ ${exponent} = ${JSON.parse(result).body}`;
-        })
-        .catch(error => console.log('error', error));
 };
