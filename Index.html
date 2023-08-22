@@ -11,7 +11,7 @@
         <input type="text" id="base" oninput="validateInput(this)">
         <label>...to the power of:</label>
         <input type="text" id="exponent" oninput="validateInput(this)">
-        <button type="button" onclick="calculatePower()">CALCULATE</button>
+        <button type="button" onclick="callAPI(document.getElementById('base').value,document.getElementById('exponent').value">CALCULATE</button>
     </form>
     <div id="result"></div>
     <script src="script.js"></script>
