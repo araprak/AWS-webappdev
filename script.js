@@ -18,10 +18,7 @@ var callAPI = () => {
 
     fetch("https://zsk9bo6vv7.execute-api.ap-south-1.amazonaws.com/Powerofdev", requestOptions)
         .then(response => response.text())
-        .then(result => {
-            var resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = `API Result: ${base} ^ ${exponent} = ${JSON.parse(result).body}`;
-        })
+        .then(result => alert(JSON.parse(result).body))
         .catch(error => console.log('error', error));
 };
 
