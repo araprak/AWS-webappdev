@@ -5,19 +5,19 @@ function validateInput(inputElement) {
 
 // calculatePower function that calculates and displays the result
 var calculatePower = () => {
-    var base = parseFloat(document.getElementById('base').value);
-    var exponent = parseFloat(document.getElementById('exponent').value);
-
-    if (isNaN(base) || isNaN(exponent)) {
+    var base = new Big(document.getElementById('base').value);
+    var exponent = parseInt(document.getElementById('exponent').value);
+    
+    if (isNaN(exponent)) {
         var resultDiv = document.getElementById('result');
-        resultDiv.innerHTML = "Please enter valid numeric values for base and exponent.";
+        resultDiv.innerHTML = "Please enter a valid numeric exponent.";
         return;
     }
 
-    var result = Math.pow(base, exponent);
+    var result = base.pow(exponent).toString();
 
     var resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = `Math Result: ${base} ^ ${exponent} = ${result}`;
+    resultDiv.innerHTML = `Math Result: ${base.toString()} ^ ${exponent} = ${result}`;
 
     // Call the API function
     callAPI();
