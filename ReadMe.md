@@ -1,4 +1,4 @@
-# Power of x raised to y AWS web app
+# A Scalable and Secure Web Application for Calculating the Power of x Raised to y Using AWS services.
 
 This project uses AWS REST API, Lambda, DynamoDB, API Gateway, and Amplify to build a simple web application that calculates the power of x raised to y.
 
